@@ -1,0 +1,21 @@
+<center>
+	<h1 style="color: darkolivegreen;">Show Page</h1>
+	<br>
+	<h3><strong style="color:orangered;"><%= @user.name %></strong></h3>
+	<%= @user.mobno %>
+	
+	<% @user.addresses.each do |address| %>
+		<%= address.city %>
+		<br>
+		<%= address.area %>
+		<br>
+		<%= address.street %>
+		<br>
+	<% end %>
+
+	<br>
+	<%= link_to "EDitUser", edit_user_path(@user), class:"btn btn-outline-dark btn-sm" %>
+	|| <%= link_to "DEleteUser", user_path(@user), method: :delete , class:"btn btn-outline-dark btn-sm" %>
+
+</center>
+<%= link_to "back", users_path %>

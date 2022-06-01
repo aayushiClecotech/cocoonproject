@@ -1,0 +1,27 @@
+<center>
+<h4>User Creation</h4>
+<%= form_for @user do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :mobno %>
+    <br>
+    <%= f.text_field :mobno %>
+  </div>
+
+  <h3> Address </h3>
+  <div id="addresses">
+    <%= f.fields_for :addresses do |add| %>
+      <%= render 'address_fields', f: task %>
+    <% end %>
+	  <div class="links">
+	    <%= link_to_add_association 'add address', f, :addresses %>
+	  </div>
+  </div>
+  <%= f.submit %>
+<% end %>
+</center>

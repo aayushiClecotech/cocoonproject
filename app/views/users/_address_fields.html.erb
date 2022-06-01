@@ -1,0 +1,22 @@
+<center>
+  <div class="nested-fields">
+     <div class="field">
+      <%= f.label :city %>
+      <br>
+      <%= f.text_field :city %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :area %>
+      <br>
+      <%= f.text_field :area %>
+    </div>
+
+    <div class="field">
+      <%= f.label :street %>
+      <br>
+      <%= f.text_field :street %>
+    </div>
+    <%= link_to_remove_association "remove task", f %>
+  </div> 
+</center>

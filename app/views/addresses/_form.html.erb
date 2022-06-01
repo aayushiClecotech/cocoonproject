@@ -1,0 +1,25 @@
+<%= form_for @user do |f| %>
+  <div class="field">
+    <%= f.label :city %>
+    <br>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Area %>
+    <br>
+    <%= f.text_field :area %>
+  </div>
+
+  <h3> Address </h3>
+  <div id="addresses">
+    <%= f.fields_for :addresses do |add| %>
+      <%= render 'address_fields', f: task %>
+  </div>
+
+  <div class="links">
+    <%= link_to_add_association 'add address', f, :addresses %>
+    <%= f.submit %>
+  </div>
+    <% end %>
+<% end %>

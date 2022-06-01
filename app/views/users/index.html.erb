@@ -1,0 +1,24 @@
+<center>
+	<h1>HelloUsers</h1>
+	<% @users.each do |user| %>
+	<br>
+		<span style="color:darkmagenta;"><%= user.name %></span>
+		<br>
+		<%= user.mobno %>
+		<br>
+
+		<% user.addresses.each do |address| %>
+		<%= address.city %>
+		<br>
+		<%= address.area %>
+		<br>
+		<%= address.street %>
+		<% end %>
+		<br>
+		<%= link_to "ShowUser", user_path(user), class:"btn btn-outline-warning btn-sm" %>
+	|| <%= link_to "DEleteUser", user_path(user), method: :delete , class:"btn btn-outline-danger btn-sm" %>
+	<hr>
+	<% end %>
+	<br>
+	<%= link_to "NewForm" , new_user_path, class:"btn btn-info" %>
+</center>
